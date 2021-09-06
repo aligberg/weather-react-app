@@ -1,8 +1,17 @@
 import React from "react";
 import Search from "./Search";
 import "./Weather.css";
+import axios from "axios";
 
-export default function Weather(props) {
+export default function Weather() {
+  function handleResponse(response) {
+    alert(`The temperature in ${response.data.name} is ${Math.round(response.data.main.temp)}°F.`)
+  }
+  let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
+  let unit = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(handleResponse);
+  
   let weatherData = {
     city: "New York City",
     temperature: 70,

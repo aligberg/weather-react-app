@@ -15,7 +15,7 @@ export default function Search() {
           />
         </div>
         <div className="icons col-auto">
-          <button type="submit" className="btn fabutton">
+          <button type="submit" value="search" className="btn fabutton">
             <i className="fas fa-search searchIcon p-1"></i>
           </button>
           <button type="submit" class="btn fabutton" id="geolocation">

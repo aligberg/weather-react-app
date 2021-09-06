@@ -11,7 +11,7 @@ export default function Footer() {
       >
         Open-source code
       </a>
-      by Ali Greenberg
+      {" "}by Ali Greenberg
     </footer>
   );
 }
