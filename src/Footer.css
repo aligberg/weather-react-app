@@ -1,0 +1,14 @@
+footer {
+  text-align: center;
+  opacity: 0.9;
+  margin-top: 4px;
+  font-size: 15px;
+}
+footer a {
+  text-decoration: underline;
+}
+
+footer a:hover {
+  transition: 0.25s ease-in-out;
+  color: rgba(231, 231, 231, 0.9);
+}

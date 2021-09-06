@@ -1,3 +1,12 @@
-.App {
-  text-align: center;
+body {
+  background: url(https://github.com/aligberg/weather-app/blob/main/src/images/rebecca-campbell-5nN9NX6dJxc-unsplash.jpg?raw=true);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  padding-bottom: 75px;
+}
+
+a {
+  text-decoration: none;
+  color: #2f364e;
 }

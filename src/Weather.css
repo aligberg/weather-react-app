@@ -1,0 +1,60 @@
+.Weather {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Catamaran", sans-serif;
+  margin-top: 35px;
+  padding: 30px;
+  color: rgb(36, 35, 35);
+  background: rgba(231, 231, 231, 0.5);
+  color: #2f364e;
+}
+.Weather .date,
+.time {
+  font-size: 18px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.Weather .time {
+  text-align: right;
+}
+.Weather .city-name h2 {
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 45px;
+  font-weight: 100;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+.Weather .temp h1 {
+  font-size: 100px;
+  text-align: right;
+}
+.Weather small {
+  font-size: 20px;
+}
+.Weather li {
+  list-style: none;
+}
+.Weather ul {
+  padding-top: 30px;
+  margin-left: -30px;
+}
+.Weather .conditions {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.Weather .conditions img {
+  display: block;
+  margin: 0 auto;
+  float: right;
+  width: 130px;
+  padding-bottom: 5px;
+}

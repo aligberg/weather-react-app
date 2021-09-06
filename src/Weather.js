@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import "./Weather.css";
 
 export default function Weather(props) {
   let weatherData = {
