@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 
 export default function Weather(props) {
@@ -12,8 +13,7 @@ export default function Weather(props) {
       city: response.data.name,
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
-      date: "Sunday, August 29 2021",
-      time: "11:40",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       weatherImg: "http://openweathermap.org/img/wn/04d@2x.png",
       humidity: response.data.main.humidity,
@@ -27,18 +27,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <div className="row date-time">
-          <div className="col-6">
-            <div className="date" id="date">
-              {weatherData.date}
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="time" id="time">
-              {weatherData.time}
-            </div>
-          </div>
-        </div>
+            <FormattedDate date={weatherData.date} />
         <form className="Search mt-2">
           <div className="form-row search-bar" autofocus="off">
             <div className="col-10 bar">
