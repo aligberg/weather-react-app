@@ -1,17 +1,10 @@
 import React from "react";
-import Search from "./Search";
 import "./Weather.css";
 import axios from "axios";
 
+
 export default function Weather() {
-  function handleResponse(response) {
-    alert(`The temperature in ${response.data.name} is ${Math.round(response.data.main.temp)}°F.`)
-  }
-  let apiKey = "54cae2bb0d0b7168b158d795db1580ea";
-  let unit = "imperial";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=${unit}`;
-  axios.get(apiUrl).then(handleResponse);
-  
+ 
   let weatherData = {
     city: "New York City",
     temperature: 70,
@@ -39,7 +32,27 @@ export default function Weather() {
           </div>
         </div>
       </div>
-      <Search />
+      <form className="Search mt-2">
+      <div className="form-row search-bar" autofocus="off">
+        <div className="col-10 bar">
+          <input
+            className="form-control search"
+            type="search"
+            placeholder="Search cities..."
+            aria-label="Search"
+            autocomplete="off"
+          />
+        </div>
+        <div className="icons col-auto">
+          <button type="submit" value="search" className="btn fabutton">
+            <i className="fas fa-search searchIcon p-1"></i>
+          </button>
+          <button type="submit" class="btn fabutton" id="geolocation">
+            <i className="fas fa-map-marker-alt locationIcon p-1"></i>
+          </button>
+        </div>
+      </div>
+    </form>
       <div className="row city-name">
         <h2>{weatherData.city}</h2>
       </div>
