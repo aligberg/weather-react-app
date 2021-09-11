@@ -17,7 +17,7 @@ export default function Weather(props) {
       feelsLike: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      weatherImg: "http://openweathermap.org/img/wn/04d@2x.png",
+      weatherImg: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       max: response.data.main.temp_max,
