@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import FormattedDate from "./FormattedDate";
+import WeatherForecast from "./WeatherForecast"
 
 
 
@@ -12,6 +13,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      coordinates: response.data.coord,
       ready: true,
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -24,6 +26,17 @@ export default function Weather(props) {
       max: response.data.main.temp_max,
       min: response.data.main.temp_min
     });
+    document.body.classList = "";
+
+    if (response.data.weather[0].icon === "01d") {
+      document.body.classList.add("clearDay");
+    } else if (response.data.weather[0].icon === "01n") {
+      document.body.classList.add("clearNight");
+    } else if (response.data.weather[0].icon === "02d" || "03d") {
+      document.body.classList.add("cloudyDay");
+    } else if (response.data.weather[0].icon === "10d") {
+      document.body.classList.add("rainyDay");
+    } 
   }
   function search() {
     const apiKey = "54cae2bb0d0b7168b158d795db1580ea";
@@ -67,7 +80,8 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData}/>
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast icon={weatherData.weatherImg} coordinates={weatherData.coordinates}/>
       </div>
     );
   } else {

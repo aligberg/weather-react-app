@@ -9,10 +9,7 @@ export default function WeatherInfo(props) {
           <h2>{props.data.city}</h2>
         </div>
       <div className="row city-highlights">
-      <WeatherTemperature fahrenheitTemp={props.data.temperature} fahrenheitFeelsLike={props.data.feelsLike} fahrenheitMax={props.data.max} fahrenheitMin={props.data.min} />
-
-          
-
+        <WeatherTemperature fahrenheitTemp={props.data.temperature} fahrenheitFeelsLike={props.data.feelsLike} fahrenheitMax={props.data.max} fahrenheitMin={props.data.min} />
           <div className="col-6 conditions">
             <div className="row">
               <div className="col-6">

@@ -1,0 +1,10 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast-min {
+  opacity: 0.7;
+}
+.forecastIcon {
+  width: 75px;
+}
