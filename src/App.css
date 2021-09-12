@@ -1,5 +1,5 @@
 body {
-  background: url(https://github.com/aligberg/weather-app/blob/main/src/images/rebecca-campbell-5nN9NX6dJxc-unsplash.jpg?raw=true);
+  background: url('./images/cloudyday.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;

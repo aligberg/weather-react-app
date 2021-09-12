@@ -2,7 +2,8 @@ import React from "react";
 
 
 export default function WeatherInfo(props) {
-  return (<div className="weatherData">
+  return (
+    <div className="weatherData">
     <div className="row city-name">
           <h2>{props.data.city}</h2>
         </div>
