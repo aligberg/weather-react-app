@@ -5,30 +5,13 @@ import WeatherTemperature from "./WeatherTemperature";
 export default function WeatherInfo(props) {
   return (
     <div className="weatherData">
-    <div className="row city-name">
+        <div className="row city-name">
           <h2>{props.data.city}</h2>
         </div>
-        <div className="row city-highlights">
-          <div className="col-6">
-            <div className="row">
-              <div className="col-6">
-              <WeatherTemperature fahrenheitTemp={props.data.temperature} fahrenheitFeelsLike={props.data.feelsLike} />
-              </div>
-              <div className="col-6">
-                <ul>
-                  <li>
-                    Feels like <span>{Math.round(props.data.feelsLike)}°</span>
-                  </li>
-                  <li>
-                    Hi/Lo:{" "}
-                    <span>
-                      {Math.round(props.data.max)}°/{Math.round(props.data.min)}°
-                  </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+      <div className="row city-highlights">
+      <WeatherTemperature fahrenheitTemp={props.data.temperature} fahrenheitFeelsLike={props.data.feelsLike} fahrenheitMax={props.data.max} fahrenheitMin={props.data.min} />
+
+          
 
           <div className="col-6 conditions">
             <div className="row">
