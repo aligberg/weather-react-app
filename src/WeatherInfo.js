@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherTemperature from "./WeatherTemperature";
 
 
 export default function WeatherInfo(props) {
@@ -11,16 +12,7 @@ export default function WeatherInfo(props) {
           <div className="col-6">
             <div className="row">
               <div className="col-6">
-                <div className="temp">
-                  <h1>
-                    <span>{Math.round(props.data.temperature)}</span>
-                    <sup>
-                      <small>
-                        °<a href="/">F</a> / <a href="/">C</a>
-                      </small>
-                    </sup>
-                  </h1>
-                </div>
+              <WeatherTemperature fahrenheitTemp={props.data.temperature} fahrenheitFeelsLike={props.data.feelsLike} />
               </div>
               <div className="col-6">
                 <ul>

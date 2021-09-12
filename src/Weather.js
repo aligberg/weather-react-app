@@ -5,6 +5,7 @@ import WeatherInfo from "./WeatherInfo";
 import FormattedDate from "./FormattedDate";
 
 
+
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -26,8 +27,7 @@ export default function Weather(props) {
   }
   function search() {
     const apiKey = "54cae2bb0d0b7168b158d795db1580ea";
-    let unit = "imperial";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
   
