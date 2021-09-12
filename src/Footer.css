@@ -6,6 +6,7 @@ footer {
 }
 footer a {
   text-decoration: underline;
+  color: #2f364e;
 }
 
 footer a:hover {
