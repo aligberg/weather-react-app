@@ -21,7 +21,28 @@ body {
   padding-bottom: 75px;
 }
 .rainyDay {
-  background: url('./images/rainyimage.jpg');
+  background: url('./images/rain.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  padding-bottom: 75px;
+}
+.snowyday {
+  background: url('./images/snowyday.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  padding-bottom: 75px;
+}
+.overcast {
+  background: url('./images/overcast.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  padding-bottom: 75px;
+}
+.darkClouds {
+  background: url('./images/storm.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;

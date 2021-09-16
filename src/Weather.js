@@ -3,8 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import FormattedDate from "./FormattedDate";
-import WeatherForecast from "./WeatherForecast"
-
+import WeatherForecast from "./WeatherForecast";
 
 
 export default function Weather(props) {
@@ -32,11 +31,16 @@ export default function Weather(props) {
       document.body.classList.add("clearDay");
     } else if (response.data.weather[0].icon === "01n") {
       document.body.classList.add("clearNight");
-    } else if (response.data.weather[0].icon === "02d" || "03d") {
+    } else if (response.data.weather[0].icon === "02d" || response.data.weather[0].icon === "03d") {
       document.body.classList.add("cloudyDay");
-    } else if (response.data.weather[0].icon === "10d") {
+    } else if (response.data.weather[0].icon === "10d" || response.data.weather[0].icon === "09d") {
       document.body.classList.add("rainyDay");
-    } 
+    } else if (response.data.weather[0].icon === "13d") {
+      document.body.classList.add("snowyDay");
+    } else if (response.data.weather[0].icon === "04d" || response.data.weather[0].icon === "04n") {
+      document.body.classList.add("overcast");
+    } else if (response.data.weather[0].icon === "11d" || response.data.weather[0].icon === "11n" || response.data.weather[0].icon === "10n")
+      document.body.classList.add("darkClouds");
   }
   function search() {
     const apiKey = "9922e3d7012703109c706f2f291e8fb4";
@@ -51,6 +55,19 @@ export default function Weather(props) {
 
   function handleCityChange(event) {
     setCity(event.target.value);
+  }
+
+  function searchLocation(position){
+    const apiKey = "9922e3d7012703109c706f2f291e8fb4";
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
   }
 
   if (weatherData.ready) {
@@ -74,7 +91,7 @@ export default function Weather(props) {
               <button type="submit" value="search" className="btn fabutton">
                 <i className="fas fa-search searchIcon p-1"></i>
               </button>
-              <button type="submit" className="btn fabutton" id="geolocation">
+              <button type="button" className="btn fabutton" id="geolocation" onClick={handleCurrentLocation}>
                 <i className="fas fa-map-marker-alt locationIcon p-1"></i>
               </button>
             </div>
